@@ -11,6 +11,12 @@ class Api::V1::BeersController < ApplicationController
     render json: @beer
   end
 
+  def search
+    @beers = Beer.search_by_term(params[:q])
+
+    render json: @beers
+  end
+
   private
 
   def set_beer
