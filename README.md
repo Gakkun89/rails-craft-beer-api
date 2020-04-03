@@ -1,24 +1,7 @@
-# README
+# Craft Beer Api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A way for me to practice creating an API.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The API will be able to return information about different craft beers and breweries.
+The data is populated via my Untappd Scraper and will return beers based on criteria
+such as ABV, syle, IBU, brewery etc.
