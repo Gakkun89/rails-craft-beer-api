@@ -16,3 +16,9 @@ Specific beer by ID:
 
 Search all beers (name, brewery, style, description):
 *url*/api/v1/search?q={query}
+
+TODO:
+* Add ABV to search, eg. up to a certain ABV, or above, or in range
+* Add search by IBU like above
+* Add Search just by style
+* Add landing page accesible on root which can give example of what the api will return and usage guidance
