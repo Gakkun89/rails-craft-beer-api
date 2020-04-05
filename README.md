@@ -16,12 +16,14 @@ Specific beer by ID:
 
 Search all beers (name, brewery, style, description):
 *url*/api/v1/search?q={query}
+Limit by ABV range (or just select max or min)
+*url*/api/v1/search?q={query}&maxABV=10&minABV=2
+
 
 Random beer:
 *url*/api/v1/random
 
 TODO:
-* Add ABV to search, eg. up to a certain ABV, or above, or in range
 * Add search by IBU like above
 * Add Search just by style
 
