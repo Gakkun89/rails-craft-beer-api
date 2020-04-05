@@ -9,11 +9,25 @@ class Beer < ApplicationRecord
     }
   def self.filter_by_abv(options)
     beers = options[:beers]
-    max = options[:max].to_i
-    min = options[:min].to_i
-
-    beers = beers.select do |beer|
-      beer[:abv] <= max && beer[:abv] >= min
+    max = options[:max].to_i if max.nil?
+    min = options[:min].to_i if min.nil?
+    p max
+    p min
+    p options
+    if !max.zero? && !min.zero?
+      beers = beers.select do |beer|
+        beer[:abv] <= max && beer[:abv] >= min
+      end
+    elsif !max.zero?
+      beers = beers.select do |beer|
+        beer[:abv] <= max
+      end
+    elsif !min.zero?
+      beers = beers.select do |beer|
+        beer[:abv] >= min
+      end
+    else
+      beers
     end
     beers
   end
