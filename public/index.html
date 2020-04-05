@@ -48,10 +48,10 @@
     const display = document.querySelector('#api-display');
     const request = document.querySelector('#api-test').value;
     display.innerText = "Fetching result...";
-    fetch(request, {mode: 'no-cors'})
+    fetch("http://localhost:3000/api/v1/beers", {mode: 'no-cors'})
       .then(data => data.json())
       .then(data => {
-        display.innerText = JSON.stringify(data);
+        display.innerHTML = "<pre class='h-100'>" + JSON.stringify(data, undefined, 2) + "</pre>";
       });
   }
 
