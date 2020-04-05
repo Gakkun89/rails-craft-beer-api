@@ -18,7 +18,10 @@ class Api::V1::BeersController < ApplicationController
   end
 
   def random
+    beer_range = ((Beer.first.id)..(Beer.last.id))
+    @beer = Beer.find(rand(beer_range))
 
+    render json: @beer
   end
 
   private
