@@ -13,7 +13,7 @@ class Api::V1::BeersController < ApplicationController
 
   def search
     @beers = Beer.search_by_term(params[:q])
-    @beers = @beers.filter_by_abv(max: params[:maxABV], min: params[:minABV]) if params[:maxABV] || params[:minABV]
+    @beers = Beer.filter_by_abv(max: params[:maxABV], min: params[:minABV], beers: @beers) if params[:maxABV] || params[:minABV]
 
     render json: @beers
   end

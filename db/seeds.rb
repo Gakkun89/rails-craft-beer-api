@@ -16,7 +16,7 @@ beers.each do |beer|
     name: beer[1]['name'],
     brewery: beer[1]['brewery'],
     style: beer[1]['style'],
-    abv: beer[1]['abv'],
+    abv: beer[1]['abv'].gsub('%', '').to_f,
     desc: beer[1]['desc'],
     ibu: beer[1]['ibu'].to_i,
     rating: beer[1]['rating'].to_f,

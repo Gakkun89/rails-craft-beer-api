@@ -7,4 +7,8 @@ class Beer < ApplicationRecord
         prefix: true
       }
     }
+  def self.filter_by_abv(options)
+    beers = options.beers
+
+  end
 end
