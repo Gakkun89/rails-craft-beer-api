@@ -8,7 +8,7 @@ class Beer < ApplicationRecord
       }
     }
   def self.filter_by_abv(options)
-    beers = options.beers
-
+    beers = options[beers]
+    p beers
   end
 end
