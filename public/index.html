@@ -37,9 +37,25 @@
   </div>
   <div class="d-flex mt-3">
     <input type="text" class="form-input w-100" id="api-test" value="https://mikes-beer-api.herokuapp.com/api/v1/">
-    <button class="form-control w-50">Try</button>
+    <button class="form-control w-50" id="api-button">Try</button>
   </div>
   <div class="border w-100 h-50" id="api-display"></div>
 </div>
+<script>
+  const button = document.querySelector('#api-button');
+
+  function getApi(e) {
+    const display = document.querySelector('#api-display');
+    const request = document.querySelector('#api-test').value;
+    display.innerText = "Fetching result...";
+    fetch(request, {mode: 'no-cors'})
+      .then(data => data.json())
+      .then(data => {
+        display.innerText = JSON.stringify(data);
+      });
+  }
+
+  button.addEventListener('click', getApi);
+</script>
 </body>
 </html>
