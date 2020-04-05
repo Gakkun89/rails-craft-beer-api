@@ -17,6 +17,10 @@ class Api::V1::BeersController < ApplicationController
     render json: @beers
   end
 
+  def random
+
+  end
+
   private
 
   def set_beer
